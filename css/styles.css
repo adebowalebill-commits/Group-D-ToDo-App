@@ -1,0 +1,179 @@
+/* ====================== */
+/* 0. DESIGN TOKENS       */
+/* ====================== */
+:root {
+  --color-bg:         #0f0f13;
+  --color-surface:    #1a1a24;
+  --color-primary:    #6c63ff;
+  --color-primary-h:  #7b73ff;
+  --color-text:       #e2e2e8;
+  --color-text-muted: #8888a0;
+  --color-danger:     #ff6b6b;
+  --color-danger-h:   #ff8787;
+  --color-success:    #4ecb71;
+  --radius:           12px;
+  --radius-sm:        8px;
+  --shadow:           0 8px 32px rgba(0, 0, 0, 0.35);
+  --font:             'Inter', system-ui, -apple-system, sans-serif;
+  --transition:       0.2s ease;
+}
+
+/* ====================== */
+/* 1. RESET & BASE        */
+/* ====================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ====================== */
+/* 2. LAYOUT & CARD       */
+/* ====================== */
+.app {
+  width: 100%;
+  max-width: 540px;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.app-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* ====================== */
+/* 3. TASK CREATION        */
+/* (Developer A)           */
+/* ====================== */
+.input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+#task-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+#task-input:focus {
+  border-color: var(--color-primary);
+}
+
+#add-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+#add-btn:hover {
+  background-color: var(--color-primary-h);
+}
+
+#add-btn:active {
+  transform: scale(0.96);
+}
+
+/* ====================== */
+/* 4. TASK LIST            */
+/* ====================== */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition);
+}
+
+.task-item:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.95rem;
+  transition: opacity var(--transition), text-decoration-color var(--transition);
+}
+
+/* ====================== */
+/* 5. TASK COMPLETION      */
+/* (Developer B)           */
+/* ====================== */
+/* TODO: Developer B — Add checkbox styles and .task--completed class here */
+
+/* ====================== */
+/* 6. TASK DELETION        */
+/* (Developer C)           */
+/* ====================== */
+/* TODO: Developer C — Add delete button styles here */
+
+/* ====================== */
+/* 7. EMPTY STATE          */
+/* ====================== */
+.empty-state {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  display: none; /* shown via JS when task list is empty */
+}
+
+.empty-state.visible {
+  display: block;
+}
+
+/* ====================== */
+/* 8. ANIMATIONS           */
+/* ====================== */
+/* TODO: Add shared animations (fade-in, slide-in, etc.) here */
