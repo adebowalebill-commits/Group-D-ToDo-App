@@ -15,5 +15,31 @@ import { addTask } from './store.js';
  * @param {Function} renderTasks – Callback to re-render the full task list.
  */
 export function initTaskCreation(renderTasks) {
-  // TODO: Developer A — implement this function.
+  const input = document.getElementById('task-input');
+  const addBtn = document.getElementById('add-btn');
+
+  /**
+   * Handle adding a new task from the input field.
+   */
+  function handleAdd() {
+    const text = input.value.trim();
+    if (!text) return; // Reject empty / whitespace-only input (CR-4)
+
+    const task = addTask(text);
+    if (task) {
+      renderTasks();       // Refresh the list
+      input.value = '';    // Clear the field (CR-3)
+      input.focus();       // Re-focus for quick consecutive adds
+    }
+  }
+
+  // Click the "Add" button (CR-2)
+  addBtn.addEventListener('click', handleAdd);
+
+  // Press Enter inside the input field (CR-2)
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      handleAdd();
+    }
+  });
 }
