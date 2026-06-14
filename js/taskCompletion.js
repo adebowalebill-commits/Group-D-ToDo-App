@@ -34,10 +34,23 @@ export function createCheckbox(task) {
  * @param {Function} renderTasks – Callback to re-render the full task list.
  */
 export function initTaskCompletion(renderTasks) {
-  // TODO: Developer B — implement this function.
-  // Should add a 'change' event listener on #task-list that:
-  //   1. Checks if the target is a .task-checkbox
-  //   2. Finds the parent .task-item's data-id
-  //   3. Calls toggleTask(id)
-  //   4. Calls renderTasks()
+  const taskList = document.getElementById('task-list');
+
+  // Add a 'change' event listener using event delegation
+  taskList.addEventListener('change', (event) => {
+    
+    // 1. Check if the target that triggered the event is a checkbox
+    if (event.target.classList.contains('task-checkbox')) {
+      
+      // 2. Find the parent .task-item and get its data-id
+      const taskItem = event.target.closest('.task-item');
+      const taskId = taskItem.dataset.id; 
+      
+      // 3. Call toggleTask from the store to update the state
+      toggleTask(taskId);
+      
+      // 4. Call renderTasks to refresh the UI and apply the completed CSS classes
+      renderTasks();
+    }
+  });
 }
