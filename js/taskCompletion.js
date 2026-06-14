@@ -1,5 +1,5 @@
 // js/taskCompletion.js
-// Feature 2 — Task Completion (Developer B)
+// Feature 2 — Task Completion (Developer Abu Ridwan B)
 //
 // Responsibilities:
 //   1. Provide a helper to create a checkbox element for a given task.
@@ -16,7 +16,7 @@ import { toggleTask } from './store.js';
  * @returns {HTMLInputElement}
  */
 export function createCheckbox(task) {
-  // TODO: Developer B — implement this function.
+  // TODO: Developer Abu Ridwan — implement this function.
   // Should return an <input type="checkbox"> with:
   //   - class "task-checkbox"
   //   - checked property matching task.completed
