@@ -148,7 +148,7 @@ body {
 
 /* ====================== */
 /* 5. TASK COMPLETION      */
-/* (Developer Abu Ridwan)           */
+/* (Developer Abu Ridwan) */
 /* ====================== */
 
 .task-checkbox {
@@ -164,7 +164,6 @@ body {
   transform: scale(0.9);
 }
 
-/* Applies the strikethrough and fades the text when the task is completed */
 .task-item.task--completed .task-text {
   text-decoration: line-through;
   color: var(--color-text-muted);
@@ -175,7 +174,25 @@ body {
 /* 6. TASK DELETION        */
 /* (Developer C)           */
 /* ====================== */
-/* TODO: Developer C — Add delete button styles here */
+
+.delete-btn {
+  background-color: var(--color-danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.delete-btn:hover {
+  background-color: var(--color-danger-h);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
 
 /* ====================== */
 /* 7. EMPTY STATE          */
@@ -185,7 +202,7 @@ body {
   color: var(--color-text-muted);
   font-size: 0.9rem;
   padding: 2rem 0;
-  display: none; /* shown via JS when task list is empty */
+  display: none;
 }
 
 .empty-state.visible {
