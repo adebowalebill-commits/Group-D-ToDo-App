@@ -148,7 +148,7 @@ body {
 
 /* ====================== */
 /* 5. TASK COMPLETION      */
-/* (Developer Abu Ridwan) */
+/* (Developer Abu Ridwan)           */
 /* ====================== */
 
 .task-checkbox {
@@ -164,6 +164,7 @@ body {
   transform: scale(0.9);
 }
 
+/* Applies the strikethrough and fades the text when the task is completed */
 .task-item.task--completed .task-text {
   text-decoration: line-through;
   color: var(--color-text-muted);
