@@ -16,11 +16,6 @@ import { toggleTask } from './store.js';
  * @returns {HTMLInputElement}
  */
 export function createCheckbox(task) {
-  // TODO: Developer Abu Ridwan — implement this function.
-  // Should return an <input type="checkbox"> with:
-  //   - class "task-checkbox"
-  //   - checked property matching task.completed
-  //   - appropriate aria-label
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.className = 'task-checkbox';
