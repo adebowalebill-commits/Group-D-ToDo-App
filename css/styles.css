@@ -148,9 +148,28 @@ body {
 
 /* ====================== */
 /* 5. TASK COMPLETION      */
-/* (Developer B)           */
+/* (Developer Abu Ridwan)           */
 /* ====================== */
-/* TODO: Developer B — Add checkbox styles and .task--completed class here */
+
+.task-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--color-primary); 
+  transition: transform var(--transition);
+  margin-right: 0.5rem;
+}
+
+.task-checkbox:active {
+  transform: scale(0.9);
+}
+
+/* Applies the strikethrough and fades the text when the task is completed */
+.task-item.task--completed .task-text {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
 
 /* ====================== */
 /* 6. TASK DELETION        */
